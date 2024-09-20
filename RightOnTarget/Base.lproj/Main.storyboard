@@ -1,24 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="landscape" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RightOnTarget" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="852" height="393"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="25" minValue="1" maxValue="50" minimumValueImage="01.square.fill" catalog="system" maximumValueImage="50.square.fill" translatesAutoresizingMaskIntoConstraints="NO" id="gqW-DZ-e7i">
+                                <rect key="frame" x="77" y="181.66666666666666" width="698" height="31"/>
+                                <color key="tintColor" systemColor="systemPurpleColor"/>
+                                <color key="minimumTrackTintColor" systemColor="systemPinkColor"/>
+                                <color key="thumbTintColor" systemColor="systemPinkColor"/>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hOX-xu-5CD">
+                                <rect key="frame" x="360" y="241.66666666666666" width="132" height="18.333333333333343"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Проверить">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                    <color key="baseForegroundColor" systemColor="systemIndigoColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="check" destination="BYZ-38-t0r" eventType="touchUpInside" id="9gG-rg-ORZ"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wij-KE-tyd">
+                                <rect key="frame" x="421" y="290" width="10.333333333333314" height="47"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="hXx-KI-kmQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Счет: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R9z-Lj-UmM">
+                                <rect key="frame" x="79" y="20" width="71" height="24"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vBR-s8-XGv">
+                                <rect key="frame" x="700" y="337" width="132" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="О программе"/>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                        <constraints>
+                            <constraint firstItem="wij-KE-tyd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0bq-qj-ipE"/>
+                            <constraint firstAttribute="trailing" secondItem="vBR-s8-XGv" secondAttribute="trailing" constant="20" id="9Fs-IS-8PW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gqW-DZ-e7i" secondAttribute="trailing" constant="20" id="FMU-9e-NGI"/>
+                            <constraint firstItem="wij-KE-tyd" firstAttribute="top" secondItem="hOX-xu-5CD" secondAttribute="bottom" constant="30" id="LFC-Yu-oA4"/>
+                            <constraint firstItem="hOX-xu-5CD" firstAttribute="top" secondItem="gqW-DZ-e7i" secondAttribute="bottom" constant="30" id="Pt3-f6-DeU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="R9z-Lj-UmM" secondAttribute="trailing" symbolic="YES" id="Usw-cL-lDl"/>
+                            <constraint firstItem="vBR-s8-XGv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6Tk-OE-BBY" secondAttribute="leading" symbolic="YES" id="cV9-kq-F9M"/>
+                            <constraint firstItem="R9z-Lj-UmM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="e78-rX-BV5"/>
+                            <constraint firstItem="hOX-xu-5CD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fsN-AB-vro"/>
+                            <constraint firstItem="R9z-Lj-UmM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="lP7-fg-9B8"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="wij-KE-tyd" secondAttribute="bottom" constant="35" id="mWn-qn-jz2"/>
+                            <constraint firstItem="gqW-DZ-e7i" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="nr0-G6-PAF"/>
+                            <constraint firstItem="vBR-s8-XGv" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="qgN-16-JcP"/>
+                            <constraint firstItem="gqW-DZ-e7i" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="yRd-sF-Dv8"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="IEq-zP-HFB"/>
+                    <connections>
+                        <outlet property="label" destination="wij-KE-tyd" id="2Vr-Ad-kXZ"/>
+                        <outlet property="slider" destination="gqW-DZ-e7i" id="9SN-5b-fyw"/>
+                        <outlet property="totalScore" destination="R9z-Lj-UmM" id="Z6d-Tk-Kp0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="769.0140845070423" y="3.8167938931297707"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="01.square.fill" catalog="system" width="128" height="114"/>
+        <image name="50.square.fill" catalog="system" width="128" height="114"/>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
