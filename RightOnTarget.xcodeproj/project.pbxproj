@@ -6,30 +6,25 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		7AE1E5052C9DF633001A045E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AE1E4FC2C9DF633001A045E /* Assets.xcassets */; };
+		7AE1E5072C9DF633001A045E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE1E4FF2C9DF633001A045E /* LaunchScreen.storyboard */; };
+		7AE1E5082C9DF633001A045E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE1E5012C9DF633001A045E /* Main.storyboard */; };
+		7AE1E5092C9DF633001A045E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE1E4FB2C9DF633001A045E /* AppDelegate.swift */; };
+		7AE1E50A2C9DF633001A045E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE1E5022C9DF633001A045E /* SceneDelegate.swift */; };
+		7AE1E50B2C9DF633001A045E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE1E5032C9DF633001A045E /* ViewController.swift */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		7AE1E4842C9CA9B0001A045E /* RightOnTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RightOnTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AE1E4FB2C9DF633001A045E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7AE1E4FC2C9DF633001A045E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7AE1E4FD2C9DF633001A045E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AE1E4FE2C9DF633001A045E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7AE1E5002C9DF633001A045E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7AE1E5022C9DF633001A045E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		7AE1E5032C9DF633001A045E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
-
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		7AE1E4962C9CA9B1001A045E /* Exceptions for "RightOnTarget" folder in "RightOnTarget" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Info.plist,
-			);
-			target = 7AE1E4832C9CA9B0001A045E /* RightOnTarget */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		7AE1E4862C9CA9B0001A045E /* RightOnTarget */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				7AE1E4962C9CA9B1001A045E /* Exceptions for "RightOnTarget" folder in "RightOnTarget" target */,
-			);
-			path = RightOnTarget;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7AE1E4812C9CA9B0001A045E /* Frameworks */ = {
@@ -45,7 +40,7 @@
 		7AE1E47B2C9CA9B0001A045E = {
 			isa = PBXGroup;
 			children = (
-				7AE1E4862C9CA9B0001A045E /* RightOnTarget */,
+				7AE1E5042C9DF633001A045E /* RightOnTarget */,
 				7AE1E4852C9CA9B0001A045E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,6 +51,20 @@
 				7AE1E4842C9CA9B0001A045E /* RightOnTarget.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		7AE1E5042C9DF633001A045E /* RightOnTarget */ = {
+			isa = PBXGroup;
+			children = (
+				7AE1E4FB2C9DF633001A045E /* AppDelegate.swift */,
+				7AE1E4FC2C9DF633001A045E /* Assets.xcassets */,
+				7AE1E4FD2C9DF633001A045E /* Info.plist */,
+				7AE1E4FF2C9DF633001A045E /* LaunchScreen.storyboard */,
+				7AE1E5012C9DF633001A045E /* Main.storyboard */,
+				7AE1E5022C9DF633001A045E /* SceneDelegate.swift */,
+				7AE1E5032C9DF633001A045E /* ViewController.swift */,
+			);
+			path = RightOnTarget;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -72,9 +81,6 @@
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				7AE1E4862C9CA9B0001A045E /* RightOnTarget */,
 			);
 			name = RightOnTarget;
 			packageProductDependencies = (
@@ -122,6 +128,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AE1E5052C9DF633001A045E /* Assets.xcassets in Resources */,
+				7AE1E5072C9DF633001A045E /* LaunchScreen.storyboard in Resources */,
+				7AE1E5082C9DF633001A045E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,10 +141,32 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AE1E5092C9DF633001A045E /* AppDelegate.swift in Sources */,
+				7AE1E50A2C9DF633001A045E /* SceneDelegate.swift in Sources */,
+				7AE1E50B2C9DF633001A045E /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7AE1E4FF2C9DF633001A045E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AE1E4FE2C9DF633001A045E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7AE1E5012C9DF633001A045E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7AE1E5002C9DF633001A045E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		7AE1E4982C9CA9B1001A045E /* Debug */ = {
