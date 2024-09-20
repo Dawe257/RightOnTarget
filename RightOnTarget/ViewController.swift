@@ -9,78 +9,44 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var randomNumber = 0
-    var round = 1
-    var points = 0
+    private var game: Game!
 
-    @IBOutlet weak var totalScore: UILabel!
+    // Элементы на сцене
     @IBOutlet weak var slider: UISlider!
     @IBOutlet weak var label: UILabel!
     
-    override func loadView() {
-        super.loadView()
-        print("loadView")
-    }
-    
+    // MARK: - Жизненный цикл
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print("viewDidLoad")
-        self.randomNumber = Int.random(in: 1...50)
-        self.label.text = "\(randomNumber)"
+        game = Game(minSecretValue: 1, maxSecretValue: 50, rounds: 5)
+        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        print("viewWillAppear")
-    }
+    // MARK: - Взаимодействие View - Model
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        print("viewDidAppear")
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        print("viewWillDisappear")
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        print("viewDidDisappear")
-    }
-
-    @IBAction func check() {
-        let numSlider = Int(self.slider.value.rounded())
-        var result = 0
-        if numSlider > self.randomNumber {
-            result += 50 - numSlider + self.randomNumber
-        } else if numSlider < self.randomNumber {
-            result += 50 - self.randomNumber + numSlider
+    // Проверка выбранного пользователем числа
+    @IBAction func checkNumber() {
+        game.calculateScore(with: Int(self.slider.value))
+        if game.isGameEnded {
+            showAlertWith(score: game.score)
+            game.restartGame()
         } else {
-            result += 50
+            game.startNewRound()
         }
-        self.points += result
-        self.totalScore.text = "Счет: \(self.points)"
-        if self.round == 5 {
-            let alert = UIAlertController(
-                title: "Игра окончена",
-                message: "Заработано очков: \(self.points)",
-                preferredStyle: .alert
-            )
-            let alertAction = UIAlertAction(
-                title: "Начать заново",
-                style: .default,
-                handler: { _ in self.totalScore.text = "Счет: 0" }
-            )
-            alert.addAction(alertAction)
-            present(alert, animated: true)
-            self.round = 1
-            self.points = 0
-        } else {
-            self.round += 1
-        }
-        self.randomNumber = Int.random(in: 1...50)
-        self.label.text = "\(randomNumber)"
+        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
+    }
+    
+    private func updateLabelWithSecretNumber(newText: String) {
+        self.label.text = newText
+    }
+    
+    private func showAlertWith(score: Int) {
+        let alert = UIAlertController(
+            title: "Игра окончена",
+            message: "Вы заработали \(score) очков",
+            preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Начать заново", style: .default))
+        self.present(alert, animated: true)
     }
 }
