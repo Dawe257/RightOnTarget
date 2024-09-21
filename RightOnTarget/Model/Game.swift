@@ -5,30 +5,33 @@
 //  Created by Давид Женетль on 20.09.2024.
 //
 
-protocol GameProtocol {
+import UIKit
+
+protocol Game {
+    
+    associatedtype Round
     
     var score: Int { get }
-    var secretValueGenerator: GeneratorProtocol { get }
-    var currentRound: GameRoundProtocol { get }
+    var currentRound: Round { get }
     var isGameEnded: Bool { get }
     
     func restartGame()
     func startNewRound()
 }
 
-class Game: GameProtocol {
+// MARK: NumbersGame
+
+class NumbersGame: Game {
     
     private var roundsCount: Int
-    private var rounds: [GameRoundProtocol]
-    let secretValueGenerator: GeneratorProtocol
-    var currentRound: GameRoundProtocol
+    private var rounds: [NumbersGameRound]
+    var currentRound: NumbersGameRound
     var score: Int { rounds.reduce(0) { $0 + $1.score } }
     var isGameEnded: Bool { rounds.count >= roundsCount }
     
-    init(minSecretValue: Int, maxSecretValue: Int, rounds: Int) {
-        secretValueGenerator = Generator(minSecretValue: 1, maxSecretValue: 50)!
-        currentRound = GameRound(secretValue: secretValueGenerator.getRandomNumber())
-        self.rounds = [currentRound]
+    init(rounds: Int) {
+        self.currentRound = NumbersGameRound()
+        self.rounds = [self.currentRound]
         roundsCount = rounds
     }
     
@@ -38,7 +41,38 @@ class Game: GameProtocol {
     }
     
     func startNewRound() {
-        currentRound = GameRound(secretValue: secretValueGenerator.getRandomNumber())
-        rounds.append( currentRound )
+        currentRound = NumbersGameRound()
+        rounds.append(currentRound)
+    }
+}
+
+// MARK: ColorsGame
+
+class ColorsGame: Game {
+    
+    private var roundsCount: Int
+    private var rounds: [ColorsGameRound]
+    var currentRound: ColorsGameRound
+    var score: Int { rounds.reduce(0) { $0 + $1.score } }
+    var isGameEnded: Bool { rounds.count >= roundsCount }
+    
+    init(rounds: Int) {
+        self.currentRound = ColorsGameRound()
+        self.rounds = [self.currentRound]
+        roundsCount = rounds
+    }
+    
+    func getRandomColor() -> UIColor {
+        ColorGenerator.getRandomValue()
+    }
+    
+    func restartGame() {
+        rounds.removeAll()
+        startNewRound()
+    }
+    
+    func startNewRound() {
+        currentRound = ColorsGameRound()
+        rounds.append(currentRound)
     }
 }

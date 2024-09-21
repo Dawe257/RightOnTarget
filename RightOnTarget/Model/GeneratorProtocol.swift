@@ -1,10 +1,16 @@
 //
-//  Generator.swift
+//  GeneratorProtocol.swift
 //  RightOnTarget
 //
 //  Created by Давид Женетль on 21.09.2024.
 //
+
 import UIKit
+
+protocol ColorGeneratorProtocol {
+    
+    func getRandomColor() -> UIColor
+}
 
 extension UIColor {
     static func random() -> UIColor {
@@ -21,39 +27,25 @@ extension UIColor {
         var green: CGFloat = 0
         var blue: CGFloat = 0
         var alpha: CGFloat = 0
-        guard self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else { return nil }
+        
+        // Получаем значения RGB и альфа-компонента
+        guard self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
+            return nil
+        }
+        
+        // Преобразуем компоненты в формат 0–255
         let r = Int(red * 255)
         let g = Int(green * 255)
         let b = Int(blue * 255)
+        
+        // Формируем hex-строку
         return String(format: "#%02X%02X%02X", r, g, b)
     }
 }
 
-
-protocol Generator {
+class ColorGenerator: ColorGeneratorProtocol {
     
-    associatedtype Value
-    
-    static func getRandomValue() -> Value
-}
-
-// MARK: NumberGenerator
-
-class NumberGenerator : Generator {
-    
-    private static let minSecretValue = 1
-    private static let maxSecretValue = 50
-    
-    static func getRandomValue() -> Int {
-        (minSecretValue...maxSecretValue).randomElement()!
-    }
-}
-
-// MARK: ColorGenerator
-
-class ColorGenerator: Generator {
-    
-    static func getRandomValue() -> UIColor {
+    func getRandomColor() -> UIColor {
         return .random()
     }
 }

@@ -7,9 +7,9 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class NumbersViewController: UIViewController {
     
-    private var game: Game!
+    private var game: NumbersGame!
 
     // Элементы на сцене
     @IBOutlet weak var slider: UISlider!
@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        game = Game(minSecretValue: 1, maxSecretValue: 50, rounds: 5)
+        game = NumbersGame(rounds: 5)
         updateLabelWithSecretNumber(newText: String(game.currentRound.secretValue))
     }
     
@@ -48,5 +48,10 @@ class ViewController: UIViewController {
             preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Начать заново", style: .default))
         self.present(alert, animated: true)
+    }
+    
+    
+    @IBAction func toStartScreen() {
+        dismiss(animated: true)
     }
 }
