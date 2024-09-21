@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7ACD5DF12C9F120A009FB5BB /* GameRound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD5DF02C9F11FE009FB5BB /* GameRound.swift */; };
+		7ACD5DF32C9F1213009FB5BB /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACD5DF22C9F120E009FB5BB /* Generator.swift */; };
 		7AE1E5052C9DF633001A045E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AE1E4FC2C9DF633001A045E /* Assets.xcassets */; };
 		7AE1E5072C9DF633001A045E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE1E4FF2C9DF633001A045E /* LaunchScreen.storyboard */; };
 		7AE1E5082C9DF633001A045E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7AE1E5012C9DF633001A045E /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7ACD5DF02C9F11FE009FB5BB /* GameRound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameRound.swift; sourceTree = "<group>"; };
+		7ACD5DF22C9F120E009FB5BB /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		7AE1E4842C9CA9B0001A045E /* RightOnTarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RightOnTarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AE1E4FB2C9DF633001A045E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7AE1E4FC2C9DF633001A045E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -73,6 +77,8 @@
 		7AE1E50C2C9DF6AB001A045E /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7ACD5DF22C9F120E009FB5BB /* Generator.swift */,
+				7ACD5DF02C9F11FE009FB5BB /* GameRound.swift */,
 				7AE1E50D2C9DFD6F001A045E /* Game.swift */,
 			);
 			path = Model;
@@ -155,6 +161,8 @@
 				7AE1E5092C9DF633001A045E /* AppDelegate.swift in Sources */,
 				7AE1E50A2C9DF633001A045E /* SceneDelegate.swift in Sources */,
 				7AE1E50B2C9DF633001A045E /* ViewController.swift in Sources */,
+				7ACD5DF32C9F1213009FB5BB /* Generator.swift in Sources */,
+				7ACD5DF12C9F120A009FB5BB /* GameRound.swift in Sources */,
 				7AE1E50E2C9DFD74001A045E /* Game.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -20,21 +20,21 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         game = Game(minSecretValue: 1, maxSecretValue: 50, rounds: 5)
-        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
+        updateLabelWithSecretNumber(newText: String(game.currentRound.secretValue))
     }
     
     // MARK: - Взаимодействие View - Model
     
     // Проверка выбранного пользователем числа
     @IBAction func checkNumber() {
-        game.calculateScore(with: Int(self.slider.value))
+        game.currentRound.calculateScore(with: Int(self.slider.value))
         if game.isGameEnded {
             showAlertWith(score: game.score)
             game.restartGame()
         } else {
             game.startNewRound()
         }
-        updateLabelWithSecretNumber(newText: String(game.currentSecretValue))
+        updateLabelWithSecretNumber(newText: String(game.currentRound.secretValue))
     }
     
     private func updateLabelWithSecretNumber(newText: String) {
